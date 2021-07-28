@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "careerCourseId",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsDelete(MyRds.TblCareersCourses, careerCourseId == ^careerCourseId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "DELETE",
+    "parameters": [
+      {
+        "bind": "careerCourseId",
+        "in": "Path",
+        "name": "careerCourseId",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/careers-course/{careerCourseId}",
+    "remarks": "Allows to delete a CareersCourse.",
+    "responses": []
+  }
+}

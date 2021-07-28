@@ -1,0 +1,32 @@
+{
+  "systems": [
+    {
+      "name": "Microservice",
+      "type": "Microservice",
+      "x": 401,
+      "y": 215
+    },
+    {
+      "name": "MyRds",
+      "type": "RelationalDatabase",
+      "x": 400,
+      "y": 398
+    },
+    {
+      "name": "WebApp",
+      "type": "WebFrontend",
+      "x": 198,
+      "y": 89
+    }
+  ],
+  "references": [
+    {
+      "fromSystemName": "Microservice",
+      "toSystemName": "MyRds"
+    },
+    {
+      "fromSystemName": "WebApp",
+      "toSystemName": "Microservice"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "careerCourseId",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelectOne(MyRds.TblCareersCourses, This(), careerCourseId == ^careerCourseId)"
+      }
+    ],
+    "typeReturn": "CareersCourse",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "careerCourseId",
+        "in": "Path",
+        "name": "careerCourseId",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/careers-course/{careerCourseId}",
+    "remarks": "Allows to get a CareersCourse.",
+    "responses": []
+  }
+}

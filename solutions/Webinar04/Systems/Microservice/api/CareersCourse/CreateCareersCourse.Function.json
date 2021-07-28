@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "careersCourse",
+        "type": "CareersCourse"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsInsert(MyRds.TblCareersCourses, ^careersCourse)"
+      }
+    ],
+    "typeReturn": "integer",
+    "variables": []
+  },
+  "routing": {
+    "method": "POST",
+    "parameters": [
+      {
+        "bind": "careersCourse",
+        "in": "Body",
+        "name": "body",
+        "remarks": "CareersCourse to be created."
+      }
+    ],
+    "path": "/careers-course",
+    "remarks": "Allows to create a new CareersCourse.",
+    "responses": []
+  }
+}

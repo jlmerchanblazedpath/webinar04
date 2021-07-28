@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "inscription",
+        "type": "Inscription"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsInsert(MyRds.TblInscriptions, ^inscription)"
+      }
+    ],
+    "typeReturn": "integer",
+    "variables": []
+  },
+  "routing": {
+    "method": "POST",
+    "parameters": [
+      {
+        "bind": "inscription",
+        "in": "Body",
+        "name": "body",
+        "remarks": "Inscription to be created."
+      }
+    ],
+    "path": "/inscription",
+    "remarks": "Allows to create a new Inscription.",
+    "responses": []
+  }
+}

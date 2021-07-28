@@ -1,0 +1,56 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "args",
+        "type": "ArgsListCareersCourses"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelect(MyRds.TblCareersCourses, This(), [RdsConditional(careerCourseId == ^args.careerCourseId, !IsNull(^args.careerCourseId)), RdsConditional(careerId == ^args.careerId, !IsNull(^args.careerId)), RdsConditional(courseId == ^args.courseId, !IsNull(^args.courseId))], careerCourseId, ^args.offset, ^args.limit)"
+      }
+    ],
+    "typeReturn": "list(CareersCourse)",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "args.careerCourseId",
+        "in": "Query",
+        "name": "careerCourseId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.careerId",
+        "in": "Query",
+        "name": "careerId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.courseId",
+        "in": "Query",
+        "name": "courseId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.offset",
+        "in": "Query",
+        "name": "offset",
+        "remarks": "Requested index for start the results to be provided in response."
+      },
+      {
+        "bind": "args.limit",
+        "in": "Query",
+        "name": "limit",
+        "remarks": "Requested number results to be provided in response."
+      }
+    ],
+    "path": "/careers-courses",
+    "remarks": "Allows to get a list of CareersCourses.",
+    "responses": []
+  }
+}

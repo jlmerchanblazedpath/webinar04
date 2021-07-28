@@ -1,0 +1,42 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "careerId",
+        "type": "integer"
+      },
+      {
+        "name": "career",
+        "type": "Career"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsUpdate(MyRds.TblCareers, ^career, careerId == ^careerId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "PATCH",
+    "parameters": [
+      {
+        "bind": "careerId",
+        "in": "Path",
+        "name": "careerId",
+        "remarks": "Id."
+      },
+      {
+        "bind": "career",
+        "in": "Body",
+        "name": "body",
+        "remarks": "New Career information to be updated."
+      }
+    ],
+    "path": "/career/{careerId}",
+    "remarks": "Allows to update an existing Career.",
+    "responses": []
+  }
+}

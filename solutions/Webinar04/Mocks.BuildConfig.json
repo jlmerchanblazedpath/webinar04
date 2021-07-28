@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "systemName": "MyRds",
+      "action": "mock",
+      "mockInitialization": {
+        "records": [
+          {
+            "rdsTableName": "TblCourses",
+            "courseId": "Math01",
+            "code": "MATH01",
+            "name": "Mathematics 01"
+          },
+          {
+            "rdsTableName": "TblCourses",
+            "courseId": "Chemistry02",
+            "code": "CHEM01",
+            "name": "Chemistry 02"
+          },
+          {
+            "rdsTableName": "TblCourses",
+            "courseId": "Chem01",
+            "code": "CHEM01",
+            "name": "Chemistry 01"
+          },
+          {
+            "rdsTableName": "TblCourses",
+            "courseId": "Math02",
+            "code": "MATH02",
+            "name": "Mathematics 02"
+          },
+          {
+            "rdsTableName": "TblStudents",
+            "studentId": "JohnDoe",
+            "birthDate": "2021-07-20T00:00:00.000Z",
+            "code": "JOHNDOE",
+            "gender": "M",
+            "name": "John",
+            "surname": "Doe"
+          },
+          {
+            "rdsTableName": "TblStudents",
+            "studentId": "JaneDoe",
+            "birthDate": "2021-07-11T00:00:00.000Z",
+            "code": "JANEDOE",
+            "gender": "F",
+            "name": "Jane",
+            "surname": "Doe"
+          }
+        ]
+      }
+    }
+  ]
+}

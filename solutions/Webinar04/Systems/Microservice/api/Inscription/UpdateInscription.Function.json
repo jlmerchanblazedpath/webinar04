@@ -1,0 +1,42 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "inscriptionId",
+        "type": "integer"
+      },
+      {
+        "name": "inscription",
+        "type": "Inscription"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsUpdate(MyRds.TblInscriptions, ^inscription, inscriptionId == ^inscriptionId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "PATCH",
+    "parameters": [
+      {
+        "bind": "inscriptionId",
+        "in": "Path",
+        "name": "inscriptionId",
+        "remarks": "Id."
+      },
+      {
+        "bind": "inscription",
+        "in": "Body",
+        "name": "body",
+        "remarks": "New Inscription information to be updated."
+      }
+    ],
+    "path": "/inscription/{inscriptionId}",
+    "remarks": "Allows to update an existing Inscription.",
+    "responses": []
+  }
+}
