@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "careerId",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsDelete(MyRds.TblCareers, careerId == ^careerId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "DELETE",
+    "parameters": [
+      {
+        "bind": "careerId",
+        "in": "Path",
+        "name": "careerId",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/career/{careerId}",
+    "remarks": "Allows to delete a Career.",
+    "responses": []
+  }
+}

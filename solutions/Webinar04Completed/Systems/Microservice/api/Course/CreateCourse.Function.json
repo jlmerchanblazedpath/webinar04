@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "course",
+        "type": "Course"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsInsert(MyRds.TblCourses, ^course)"
+      }
+    ],
+    "typeReturn": "integer",
+    "variables": []
+  },
+  "routing": {
+    "method": "POST",
+    "parameters": [
+      {
+        "bind": "course",
+        "in": "Body",
+        "name": "body",
+        "remarks": "Course to be created."
+      }
+    ],
+    "path": "/course",
+    "remarks": "Allows to create a new Course.",
+    "responses": []
+  }
+}

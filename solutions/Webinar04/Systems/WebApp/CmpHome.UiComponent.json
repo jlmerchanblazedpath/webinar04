@@ -1,7 +1,30 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "SetValue",
+            "expression": "{}",
+            "widgetName": "htmlrenderer1"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "main_init"
+    }
+  ],
   "model": [],
   "root": {
+    "children": [
+      {
+        "htmlTemplate": "<div>\n  <h1>Welcome to the Fourth Webinar!</h1>\n</div>",
+        "name": "htmlrenderer1",
+        "widget": "HtmlRenderer"
+      }
+    ],
     "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-padding-bottom-large blz-area-main",
     "horizontalSeparation": "large",
     "layout": "container",

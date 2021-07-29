@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "inscriptionId",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsDelete(MyRds.TblInscriptions, inscriptionId == ^inscriptionId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "DELETE",
+    "parameters": [
+      {
+        "bind": "inscriptionId",
+        "in": "Path",
+        "name": "inscriptionId",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/inscription/{inscriptionId}",
+    "remarks": "Allows to delete a Inscription.",
+    "responses": []
+  }
+}

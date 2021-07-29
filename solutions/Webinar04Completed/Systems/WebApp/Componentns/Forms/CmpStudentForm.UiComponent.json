@@ -1,0 +1,68 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "ReadModel",
+            "modelVariableName": "student",
+            "variableName": "myStudent"
+          },
+          {
+            "command": "SetValue",
+            "expression": "^myStudent.name",
+            "widgetName": "txtName"
+          },
+          {
+            "command": "SetValue",
+            "expression": "^myStudent.surname",
+            "widgetName": "txtSurname"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "myStudent",
+            "type": "Microservice.Student"
+          }
+        ]
+      },
+      "name": "main_activate"
+    }
+  ],
+  "model": [
+    {
+      "name": "student",
+      "required": false,
+      "type": "Microservice.Student"
+    }
+  ],
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "binding": "student.name",
+            "label": "Name",
+            "name": "txtName",
+            "readOnly": true,
+            "widget": "TextBox"
+          },
+          {
+            "binding": "student.surname",
+            "label": "Surname",
+            "name": "txtSurname",
+            "readOnly": true,
+            "widget": "TextBox"
+          }
+        ],
+        "layout": "container"
+      }
+    ],
+    "cssClass": "blz-area-default",
+    "layout": "container"
+  },
+  "routing": null,
+  "unused": []
+}

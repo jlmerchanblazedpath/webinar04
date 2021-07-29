@@ -1,0 +1,56 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "args",
+        "type": "ArgsListInscriptions"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelect(MyRds.TblInscriptions, This(), [RdsConditional(inscriptionId == ^args.inscriptionId, !IsNull(^args.inscriptionId)), RdsConditional(courseId == ^args.courseId, !IsNull(^args.courseId)), RdsConditional(studentId == ^args.studentId, !IsNull(^args.studentId))], inscriptionId, ^args.offset, ^args.limit)"
+      }
+    ],
+    "typeReturn": "list(Inscription)",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "args.inscriptionId",
+        "in": "Query",
+        "name": "inscriptionId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.courseId",
+        "in": "Query",
+        "name": "courseId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.studentId",
+        "in": "Query",
+        "name": "studentId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.offset",
+        "in": "Query",
+        "name": "offset",
+        "remarks": "Requested index for start the results to be provided in response."
+      },
+      {
+        "bind": "args.limit",
+        "in": "Query",
+        "name": "limit",
+        "remarks": "Requested number results to be provided in response."
+      }
+    ],
+    "path": "/inscriptions",
+    "remarks": "Allows to get a list of Inscriptions.",
+    "responses": []
+  }
+}

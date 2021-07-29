@@ -1,0 +1,42 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "courseId",
+        "type": "integer"
+      },
+      {
+        "name": "course",
+        "type": "Course"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsUpdate(MyRds.TblCourses, ^course, courseId == ^courseId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "PATCH",
+    "parameters": [
+      {
+        "bind": "courseId",
+        "in": "Path",
+        "name": "courseId",
+        "remarks": "Id."
+      },
+      {
+        "bind": "course",
+        "in": "Body",
+        "name": "body",
+        "remarks": "New Course information to be updated."
+      }
+    ],
+    "path": "/course/{courseId}",
+    "remarks": "Allows to update an existing Course.",
+    "responses": []
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "args",
+        "type": "ArgsListCourses"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelect(MyRds.TblCourses, This(), [RdsConditional(courseId == ^args.courseId, !IsNull(^args.courseId)), RdsConditional(code == ^args.code, !IsNull(^args.code))], code, ^args.offset, ^args.limit)"
+      }
+    ],
+    "typeReturn": "list(Course)",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "args.courseId",
+        "in": "Query",
+        "name": "courseId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.code",
+        "in": "Query",
+        "name": "code",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.offset",
+        "in": "Query",
+        "name": "offset",
+        "remarks": "Requested index for start the results to be provided in response."
+      },
+      {
+        "bind": "args.limit",
+        "in": "Query",
+        "name": "limit",
+        "remarks": "Requested number results to be provided in response."
+      }
+    ],
+    "path": "/courses",
+    "remarks": "Allows to get a list of Courses.",
+    "responses": []
+  }
+}

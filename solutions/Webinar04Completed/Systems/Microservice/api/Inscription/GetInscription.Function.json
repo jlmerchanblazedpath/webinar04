@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "inscriptionId",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelectOne(MyRds.TblInscriptions, This(), inscriptionId == ^inscriptionId)"
+      }
+    ],
+    "typeReturn": "Inscription",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "inscriptionId",
+        "in": "Path",
+        "name": "inscriptionId",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/inscription/{inscriptionId}",
+    "remarks": "Allows to get a Inscription.",
+    "responses": []
+  }
+}

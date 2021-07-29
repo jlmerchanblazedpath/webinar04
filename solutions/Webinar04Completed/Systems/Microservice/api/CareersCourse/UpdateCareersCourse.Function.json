@@ -1,0 +1,42 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "careerCourseId",
+        "type": "integer"
+      },
+      {
+        "name": "careersCourse",
+        "type": "CareersCourse"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsUpdate(MyRds.TblCareersCourses, ^careersCourse, careerCourseId == ^careerCourseId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "PATCH",
+    "parameters": [
+      {
+        "bind": "careerCourseId",
+        "in": "Path",
+        "name": "careerCourseId",
+        "remarks": "Id."
+      },
+      {
+        "bind": "careersCourse",
+        "in": "Body",
+        "name": "body",
+        "remarks": "New CareersCourse information to be updated."
+      }
+    ],
+    "path": "/careers-course/{careerCourseId}",
+    "remarks": "Allows to update an existing CareersCourse.",
+    "responses": []
+  }
+}

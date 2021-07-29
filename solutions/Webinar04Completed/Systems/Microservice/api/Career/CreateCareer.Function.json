@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "career",
+        "type": "Career"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsInsert(MyRds.TblCareers, ^career)"
+      }
+    ],
+    "typeReturn": "integer",
+    "variables": []
+  },
+  "routing": {
+    "method": "POST",
+    "parameters": [
+      {
+        "bind": "career",
+        "in": "Body",
+        "name": "body",
+        "remarks": "Career to be created."
+      }
+    ],
+    "path": "/career",
+    "remarks": "Allows to create a new Career.",
+    "responses": []
+  }
+}

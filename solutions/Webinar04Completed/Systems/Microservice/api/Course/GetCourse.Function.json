@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "courseId",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelectOne(MyRds.TblCourses, This(), courseId == ^courseId)"
+      }
+    ],
+    "typeReturn": "Course",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "courseId",
+        "in": "Path",
+        "name": "courseId",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/course/{courseId}",
+    "remarks": "Allows to get a Course.",
+    "responses": []
+  }
+}

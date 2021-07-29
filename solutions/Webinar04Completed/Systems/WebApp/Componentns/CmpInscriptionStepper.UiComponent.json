@@ -1,0 +1,37 @@
+{
+  "eventsAndFunctions": [],
+  "model": [],
+  "root": {
+    "children": [
+      {
+        "alternativeLabel": true,
+        "name": "stepper1",
+        "orientation": "horizontal",
+        "steps": [
+          {
+            "text": "SelectCourse",
+            "uiComponentName": "GridCourses"
+          },
+          {
+            "text": "ViewCourse",
+            "uiComponentName": "CmpCourseForm"
+          },
+          {
+            "text": "SelectStudent",
+            "uiComponentName": "GridStudents"
+          },
+          {
+            "text": "ViewStudent",
+            "uiComponentName": "CmpStudentForm"
+          }
+        ],
+        "toolbarOrientation": "right",
+        "widget": "Stepper"
+      }
+    ],
+    "cssClass": "blz-area-default",
+    "layout": "container"
+  },
+  "routing": null,
+  "unused": []
+}

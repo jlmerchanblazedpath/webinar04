@@ -1,0 +1,68 @@
+{
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "ReadModel",
+            "modelVariableName": "course",
+            "variableName": "myCourse"
+          },
+          {
+            "command": "SetValue",
+            "expression": "^myCourse.code",
+            "widgetName": "txtCode"
+          },
+          {
+            "command": "SetValue",
+            "expression": "^myCourse.name",
+            "widgetName": "txtName"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "myCourse",
+            "type": "Microservice.Course"
+          }
+        ]
+      },
+      "name": "main_activate"
+    }
+  ],
+  "model": [
+    {
+      "name": "course",
+      "required": false,
+      "type": "Microservice.Course"
+    }
+  ],
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "binding": "course.code",
+            "label": "Code",
+            "name": "txtCode",
+            "readOnly": true,
+            "widget": "TextBox"
+          },
+          {
+            "binding": "course.name",
+            "label": "Name",
+            "name": "txtName",
+            "readOnly": true,
+            "widget": "TextBox"
+          }
+        ],
+        "layout": "container"
+      }
+    ],
+    "cssClass": "blz-area-default",
+    "layout": "container"
+  },
+  "routing": null,
+  "unused": []
+}

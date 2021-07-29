@@ -1,0 +1,32 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "courseId",
+        "type": "integer"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsDelete(MyRds.TblCourses, courseId == ^courseId)"
+      }
+    ],
+    "typeReturn": "any",
+    "variables": []
+  },
+  "routing": {
+    "method": "DELETE",
+    "parameters": [
+      {
+        "bind": "courseId",
+        "in": "Path",
+        "name": "courseId",
+        "remarks": "Id."
+      }
+    ],
+    "path": "/course/{courseId}",
+    "remarks": "Allows to delete a Course.",
+    "responses": []
+  }
+}
